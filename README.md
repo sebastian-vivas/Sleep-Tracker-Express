@@ -1,5 +1,7 @@
-![Sleep Tracker]
-<!-- (public/.png) -->
+# Sleep Tracker
+
+![](public/sleep.png)
+
 
 ## Installation
 
