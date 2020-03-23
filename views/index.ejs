@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Don't let the bed bugs bite</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section>
+  <h1>Day & Night</h1>
+  <h2>Track your sleep patterns throughout the day!</h2>
+  <p>Click on a night to highlight which days you slept well!</p>
+  <h2>Enter Sleep Patterns</h2>
+  <form action="/messages" method="POST">
+    <input type="text" name="date" placeholder="date">
+    <input type="text" placeholder="total hours of naps" name="naps">
+    <input type="text" placeholder="total hours of sleep" name="sleep">
+    <button type="submit">Submit</button>
+  </form>
+  <h3>Tracker</h3>
+    <table class="messages">
+      <tr>
+        <td>Date:</td>
+        <td>Nap Hours:</td>
+        <td>Sleep Hours:</td>
+      </tr>
+      <% for(var i=0; i<messages.length; i++) {%>
+        <tr>
+          <td  class="sleepPatterns" style="color:<%= messages[i].goodSleep %>"><span><%= messages[i].date %></span></td>
+          <td  class="sleepPatterns" style="color:<%= messages[i].goodSleep %>"><span><%= messages[i].naps %></span></td>
+          <td  class="sleepPatterns" style="color:<%= messages[i].goodSleep %>"><span><%= messages[i].sleep %></span></td>
+          <td id="deleteIcon"><span><i class="fa fa-trash" aria-hidden="true"></i></span><td>
+        </tr>
+        <% } %>
+    </table>
+  </section>
+  <script src="main.js"></script>
+</body>
+</html>
